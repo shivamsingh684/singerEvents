@@ -1,0 +1,148 @@
+.popup-box {
+    position: fixed;
+    background: #00000050;
+    width: 100%;
+    height:100%;
+    top: 0;
+    left: 0;
+  }
+  .popup-box1 {
+    position: fixed;
+    background: #00000050;
+    width: 100%;
+    height:400px;
+    top: 0;
+    left: 0;
+  }
+  .box1 {
+    text-align: center;
+    position: relative;
+    width: 70%;
+    margin: 0 auto;
+    height: 400px;
+    max-height: 50px;
+    margin-top: calc(100vh - 85vh - 20px);
+    background: #fff;
+    border-radius: 4px;
+    padding: 20px;
+    border: 1px solid #999;
+    overflow: auto;
+  }
+  .box {
+    text-align: center;
+    position: relative;
+    width: 70%;
+    margin: 0 auto;
+    height: 400px;
+    max-height: 700vh;
+    margin-top: calc(100vh - 85vh - 20px);
+    background: #fff;
+    border-radius: 4px;
+    padding: 20px;
+    border: 1px solid #999;
+    overflow: auto;
+  }
+   
+  .close-icon {
+    content: 'x';
+    cursor: pointer;
+    position: fixed;
+    right: calc(15% - 30px);
+    top: calc(100vh - 85vh - 33px);
+    background: red;
+    color: white;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    line-height: 20px;
+    text-align: center;
+    border: 1px solid #999;
+    font-size: 20px;
+  }
+  /* registerd */
+
+  .formBox{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+    border: 1px solid black;
+    width: 40%;
+    margin: auto;
+    margin-top: 10%;
+    height: 400px;
+    box-shadow: 5px 10px 18px rgb(221,58,76);
+  }
+  .inputBox{
+    padding: 10px;
+    width: 300px;
+    margin-bottom: 10px;
+    font-size: 20px;
+  }
+  label{
+    font-size: 20px;
+    font-weight: bold;
+    color: rgb(221,58,76)
+  }
+  .submitBtn{
+   padding: 10px;
+   font-size: 20px;
+   cursor: pointer;
+  }
+  .formBox h2{
+    font-size: 35px;
+    color: rgb(221,58,76);
+    margin-bottom: 30px
+  }
+
+  /* booked */
+
+  .box img{
+    width: 400px;
+  }
+  .box h3{
+    color: rgb(221,58,76); 
+    margin-top: 20px;
+  }
+  .information{
+    margin-top: 40px;
+  }
+  .information p{
+    font-size: 30px;
+    font-weight: bold;
+    color: black;
+    margin-top: 20px;
+  }
+  .box h4{
+    color: green;
+    margin-top: 20px;
+  }
+  .box h5{
+    color: red;
+    margin-top: 10PX;
+  }
+  @media screen and (min-width: 768px) and (max-width: 1000px) {
+    .formBox{
+      width: 30rem;
+      height: 32rem;
+      margin-top: 8%;
+    }
+    .inputBox{
+        width: 90%;
+    }
+  }
+  
+   @media screen and (min-width: 360px) and (max-width: 767px) {
+    .formBox{
+        width: 18rem;
+        height: 32rem;
+        margin-top: 8%;
+        align-items: center;
+        text-align: center;
+    }
+    .inputBox{
+        width: 90%;
+    }
+   
+  }

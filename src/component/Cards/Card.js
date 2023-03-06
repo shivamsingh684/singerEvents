@@ -1,70 +1,57 @@
 import React, { useState } from "react";
 import '../Shortlist.css';
+import { Link } from 'react-router-dom'
+import Popup from "./Popup";
+
+
+
+
 
 const Card = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen2, setIsOpen2] = useState(false);
+  const [isOpen3, setIsOpen3] = useState(false);
+  const [isOpen4, setIsOpen4] = useState(false);
+  const [isOpen5, setIsOpen5] = useState(false);
+  const [isOpen6, setIsOpen6] = useState(false);
+
+  //======
   const [active1, setActive1] = useState('black');
   const [active2, setActive2] = useState('black');
   const [active3, setActive3] = useState('black');
   const [active4, setActive4] = useState('black');
   const [active5, setActive5] = useState('black');
   const [active6, setActive6] = useState('black');
-
-  const selected = (e) => {
+  const togglePopup = (e) => {
     e.target.innerText = "SELECTED";
     setActive1("grey");
-  };
-  const doubleClick = (e) => {
-    e.target.innerText = "SELECT";
-    setActive1("black");
-  };
-  //----
-  const selected2 = (e) => {
+    setIsOpen(!isOpen);
+  }
+  const togglePopup2 = (e) => {
     e.target.innerText = "SELECTED";
     setActive2("grey");
-  };
-  const doubleClick2 = (e) => {
-    e.target.innerText = "SELECT";
-    setActive2("black");
-  };
-  //-----
-  const selected3 = (e) => {
+    setIsOpen2(!isOpen2);
+  }
+  const togglePopup3 = (e) => {
     e.target.innerText = "SELECTED";
     setActive3("grey");
-  };
-  const doubleClick3 = (e) => {
-    e.target.innerText = "SELECT";
-    setActive3("black");
-  };
-  //------
-  const selected4 = (e) => {
+    setIsOpen3(!isOpen3);
+  }
+  const togglePopup4 = (e) => {
     e.target.innerText = "SELECTED";
     setActive4("grey");
-  };
-  const doubleClick4 = (e) => {
-    e.target.innerText = "SELECT";
-    setActive4("black");
-  };
-  //------
-  const selected5 = (e) => {
+    setIsOpen4(!isOpen4);
+  }
+  const togglePopup5 = (e) => {
     e.target.innerText = "SELECTED";
     setActive5("grey");
-  };
-  const doubleClick5 = (e) => {
-    e.target.innerText = "SELECT";
-    setActive5("black");
-  };
-  //-----------
-  const selected6 = (e) => {
+    setIsOpen5(!isOpen5);
+  }
+  const togglePopup6 = (e) => {
     e.target.innerText = "SELECTED";
     setActive6("grey");
-  };
-  const doubleClick6 = (e) => {
-    e.target.innerText = "SELECT";
-    setActive6("black");
-  };
-
-
-
+    setIsOpen6(!isOpen6);
+  }
 
 
 
@@ -90,7 +77,21 @@ const Card = () => {
                 <img src="https://i.pinimg.com/236x/57/31/7f/57317f5144f26dd1fa216160b7cdd154.jpg" alt="singer" />
                 <img src="https://i.pinimg.com/236x/2f/27/b3/2f27b3573ae06d635574e88f4fd6259d.jpg" alt="singer" />
               </div>
-              <button onDoubleClick={doubleClick} onClick={selected} style={{ backgroundColor: active1 }} className='select'>SELECT</button>
+
+              <button className='select'
+
+                onClick={togglePopup}
+                style={{ backgroundColor: active1 }}
+              >SELECT</button>
+              {isOpen && <Popup
+                content={<>
+                  <b>Click Here For Booking</b>
+                  <Link to='/registered' target='_self'> <button onClick={togglePopup}>Click</button></Link>
+
+                </>}
+                handleClose={togglePopup}
+              />}
+
             </div>
           </div>
         </div>
@@ -112,7 +113,19 @@ const Card = () => {
                 <img src="https://i.pinimg.com/236x/db/a9/94/dba9948714e8ed88d46cff4c288c0c9d.jpg" alt="singer" />
                 <img src="https://i.pinimg.com/236x/e7/01/87/e70187250ed192df1aed9f02107daef3.jpg" alt="singer" />
               </div>
-              <button onDoubleClick={doubleClick2} onClick={selected2} style={{ backgroundColor: active2 }} className='select'>SELECT</button>
+              <button className='select'
+
+                onClick={togglePopup2}
+                style={{ backgroundColor: active2 }}
+              >SELECT</button>
+              {isOpen2 && <Popup
+                content={<>
+                  <b>Click Here For Booking</b>
+                  <Link to='/registered' target='_self'> <button onClick={togglePopup2}>Click</button></Link>
+
+                </>}
+                handleClose={togglePopup2}
+              />}
             </div>
           </div>
         </div>
@@ -134,7 +147,19 @@ const Card = () => {
                 <img src="https://i.pinimg.com/236x/45/0e/85/450e85d28b3e9ab3b2ddb23b6571a8df.jpg" alt="singer" />
                 <img src="https://i.pinimg.com/236x/ee/32/8c/ee328cde5dcf9ce7aeee752af4dbce27.jpg" alt="singer" />
               </div>
-              <button onDoubleClick={doubleClick3} onClick={selected3} style={{ backgroundColor: active3 }} className='select'>SELECT</button>
+              <button className='select'
+
+                onClick={togglePopup3}
+                style={{ backgroundColor: active3 }}
+              >SELECT</button>
+              {isOpen3 && <Popup
+                content={<>
+                  <b>Click Here For Booking</b>
+                  <Link to='/registered' target='_self'> <button onClick={togglePopup3}>Click</button></Link>
+
+                </>}
+                handleClose={togglePopup3}
+              />}
             </div>
           </div>
         </div>
@@ -156,7 +181,19 @@ const Card = () => {
                 <img src="https://i.pinimg.com/236x/11/be/ad/11bead2efa374a8338c0cfec5a37a0b3.jpg" alt="singer" />
                 <img src="https://i.pinimg.com/236x/12/c1/4b/12c14b324d09cd5820700ecbeaef0984.jpg" alt="singer" />
               </div>
-              <button onDoubleClick={doubleClick4} onClick={selected4} style={{ backgroundColor: active4 }} className='select'>SELECT</button>
+              <button className='select'
+
+                onClick={togglePopup4}
+                style={{ backgroundColor: active4 }}
+              >SELECT</button>
+              {isOpen4 && <Popup
+                content={<>
+                  <b>Click Here For Booking</b>
+                  <Link to='/registered' target='_self'> <button onClick={togglePopup4}>Click</button></Link>
+
+                </>}
+                handleClose={togglePopup4}
+              />}
             </div>
           </div>
         </div>
@@ -178,7 +215,19 @@ const Card = () => {
                 <img src="https://i.pinimg.com/236x/01/b7/a5/01b7a5e03a852bbe5cdc016ada3335ac.jpg" alt="singer" />
                 <img src="https://i.pinimg.com/236x/03/ca/10/03ca10208574254257c28a22329aa0f5.jpg" alt="singer" />
               </div>
-              <button onDoubleClick={doubleClick5} onClick={selected5} style={{ backgroundColor: active5 }} className='select'>SELECT</button>
+              <button className='select'
+
+                onClick={togglePopup5}
+                style={{ backgroundColor: active5 }}
+              >SELECT</button>
+              {isOpen5 && <Popup
+                content={<>
+                  <b>Click Here For Booking</b>
+                  <Link to='/registered' target='_self'> <button onClick={togglePopup5}>Click</button></Link>
+
+                </>}
+                handleClose={togglePopup5}
+              />}
             </div>
           </div>
         </div>
@@ -200,7 +249,19 @@ const Card = () => {
                 <img src="https://i.pinimg.com/236x/e0/58/ea/e058ea15e4fe0de83ec9caa290917df0.jpg" alt="singer" />
                 <img src="https://i.pinimg.com/236x/e3/ed/0e/e3ed0ee259c61f3ab43f3031e380e859.jpg" alt="singer" />
               </div>
-              <button onDoubleClick={doubleClick6} onClick={selected6} style={{ backgroundColor: active6 }} className='select'>SELECT</button>
+              <button className='select'
+
+                onClick={togglePopup6}
+                style={{ backgroundColor: active6 }}
+              >SELECT</button>
+              {isOpen6 && <Popup
+                content={<>
+                  <b>Click Here For Booking</b>
+                  <Link to='/registered' target='_self'> <button onClick={togglePopup6}>Click</button></Link>
+
+                </>}
+                handleClose={togglePopup6}
+              />}
             </div>
           </div>
         </div>
