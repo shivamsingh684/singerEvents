@@ -29,7 +29,7 @@ function Signup() {
                 updateProfile(user,{
                     displayName:values.name
                 })
-             navigate('/home')
+             navigate('/')
             })
             .catch((err) => {
                 setSubmitButtonDisable(false)
